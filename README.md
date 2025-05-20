@@ -19,17 +19,28 @@ If you have any questions, let me know. Use git to track your progress, and push
 # TODO
 
 1. Finish Readme
-1. Create a docker setup
 1. Add more error handling
 1. Add tests
 1. Maybe ask more about what they mean about the handling all the hours.
     1. But I think my logic should hold up either way.
 
 
-# Decisions
+# Decisions / Observations
 
 * I went with a separate parse data setup and saved to csv (might change to postgres for docker version)
 * Used pandas because I am a data person and grew up with it. There are other options.
 * Used uv as my package manager. Been exploring it a bunch lately.
 * Went with FastAPI because for this style of project it is just faster to get running.
-* 
+* Tried to add some logging for debug level because I hate print statements leftover.
+* I used Postman to test the API endpoint
+* Docker with uv was a "choice" but used their docs to figure it out.
+
+
+
+## Run with Docker
+```
+docker build -t liine-restaurant-api .
+
+# Although I ran in docker desktop application setting the port there.
+docker run -d -p 5555:5555 liine-restaurant-api
+```
