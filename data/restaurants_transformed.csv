@@ -1,0 +1,277 @@
+restaurant_name,day_of_week,open_time,close_time
+The Cowfish Sushi Burger Bar,0,11:00:00,22:00:00
+The Cowfish Sushi Burger Bar,1,11:00:00,22:00:00
+The Cowfish Sushi Burger Bar,2,11:00:00,22:00:00
+The Cowfish Sushi Burger Bar,3,11:00:00,22:00:00
+The Cowfish Sushi Burger Bar,4,11:00:00,22:00:00
+The Cowfish Sushi Burger Bar,5,11:00:00,22:00:00
+The Cowfish Sushi Burger Bar,6,11:00:00,22:00:00
+Morgan St Food Hall,0,11:00:00,21:30:00
+Morgan St Food Hall,1,11:00:00,21:30:00
+Morgan St Food Hall,2,11:00:00,21:30:00
+Morgan St Food Hall,3,11:00:00,21:30:00
+Morgan St Food Hall,4,11:00:00,21:30:00
+Morgan St Food Hall,5,11:00:00,21:30:00
+Morgan St Food Hall,6,11:00:00,21:30:00
+Beasley's Chicken + Honey,0,11:00:00,12:00:00
+Beasley's Chicken + Honey,1,11:00:00,12:00:00
+Beasley's Chicken + Honey,2,11:00:00,12:00:00
+Beasley's Chicken + Honey,3,11:00:00,12:00:00
+Beasley's Chicken + Honey,4,11:00:00,12:00:00
+Beasley's Chicken + Honey,5,11:00:00,12:00:00
+Beasley's Chicken + Honey,6,11:00:00,22:00:00
+Garland,1,11:30:00,22:00:00
+Garland,2,11:30:00,22:00:00
+Garland,3,11:30:00,22:00:00
+Garland,4,11:30:00,22:00:00
+Garland,6,11:30:00,22:00:00
+Garland,5,17:30:00,23:00:00
+Crawford and Son,0,11:30:00,22:00:00
+Crawford and Son,1,11:30:00,22:00:00
+Crawford and Son,2,11:30:00,22:00:00
+Crawford and Son,3,11:30:00,22:00:00
+Crawford and Son,4,11:30:00,22:00:00
+Crawford and Son,5,11:30:00,22:00:00
+Crawford and Son,6,11:30:00,22:00:00
+Death and Taxes,0,17:00:00,22:00:00
+Death and Taxes,1,17:00:00,22:00:00
+Death and Taxes,2,17:00:00,22:00:00
+Death and Taxes,3,17:00:00,22:00:00
+Death and Taxes,4,17:00:00,22:00:00
+Death and Taxes,5,17:00:00,22:00:00
+Death and Taxes,6,17:00:00,22:00:00
+Caffe Luna,0,11:00:00,00:00:00
+Caffe Luna,1,11:00:00,00:00:00
+Caffe Luna,2,11:00:00,00:00:00
+Caffe Luna,3,11:00:00,00:00:00
+Caffe Luna,4,11:00:00,00:00:00
+Caffe Luna,5,11:00:00,00:00:00
+Caffe Luna,6,11:00:00,00:00:00
+Bida Manda,0,11:30:00,22:00:00
+Bida Manda,1,11:30:00,22:00:00
+Bida Manda,2,11:30:00,22:00:00
+Bida Manda,3,11:30:00,22:00:00
+Bida Manda,6,11:30:00,22:00:00
+Bida Manda,4,11:30:00,23:00:00
+Bida Manda,5,11:30:00,23:00:00
+The Cheesecake Factory,0,11:00:00,23:00:00
+The Cheesecake Factory,1,11:00:00,23:00:00
+The Cheesecake Factory,2,11:00:00,23:00:00
+The Cheesecake Factory,3,11:00:00,23:00:00
+The Cheesecake Factory,4,11:00:00,00:30:00
+The Cheesecake Factory,5,11:00:00,00:30:00
+The Cheesecake Factory,6,10:00:00,23:00:00
+Tupelo Honey,0,09:00:00,22:00:00
+Tupelo Honey,1,09:00:00,22:00:00
+Tupelo Honey,2,09:00:00,22:00:00
+Tupelo Honey,3,09:00:00,22:00:00
+Tupelo Honey,6,09:00:00,22:00:00
+Tupelo Honey,4,09:00:00,23:00:00
+Tupelo Honey,5,09:00:00,23:00:00
+Player's Retreat,0,11:30:00,21:30:00
+Player's Retreat,1,11:30:00,21:30:00
+Player's Retreat,2,11:30:00,21:30:00
+Player's Retreat,3,11:30:00,21:30:00
+Player's Retreat,6,11:30:00,21:30:00
+Player's Retreat,4,11:30:00,22:00:00
+Player's Retreat,5,11:30:00,22:00:00
+Glenwood Grill,0,11:00:00,23:00:00
+Glenwood Grill,1,11:00:00,23:00:00
+Glenwood Grill,2,11:00:00,23:00:00
+Glenwood Grill,3,11:00:00,23:00:00
+Glenwood Grill,4,11:00:00,23:00:00
+Glenwood Grill,5,11:00:00,23:00:00
+Glenwood Grill,6,11:00:00,22:00:00
+Neomonde,0,11:30:00,22:00:00
+Neomonde,1,11:30:00,22:00:00
+Neomonde,2,11:30:00,22:00:00
+Neomonde,3,11:30:00,22:00:00
+Neomonde,4,11:30:00,23:00:00
+Neomonde,5,11:30:00,23:00:00
+Neomonde,6,11:30:00,23:00:00
+Page Road Grill,0,11:00:00,23:00:00
+Page Road Grill,1,11:00:00,23:00:00
+Page Road Grill,2,11:00:00,23:00:00
+Page Road Grill,3,11:00:00,23:00:00
+Page Road Grill,4,11:00:00,23:00:00
+Page Road Grill,5,11:00:00,23:00:00
+Page Road Grill,6,11:00:00,23:00:00
+Mez Mexican,0,10:30:00,21:30:00
+Mez Mexican,1,10:30:00,21:30:00
+Mez Mexican,2,10:30:00,21:30:00
+Mez Mexican,3,10:30:00,21:30:00
+Mez Mexican,4,10:30:00,21:30:00
+Mez Mexican,5,10:00:00,21:30:00
+Mez Mexican,6,10:00:00,21:30:00
+Saltbox,0,11:30:00,22:30:00
+Saltbox,1,11:30:00,22:30:00
+Saltbox,2,11:30:00,22:30:00
+Saltbox,3,11:30:00,22:30:00
+Saltbox,4,11:30:00,22:30:00
+Saltbox,5,11:30:00,22:30:00
+Saltbox,6,11:30:00,22:30:00
+El Rodeo,0,11:00:00,22:30:00
+El Rodeo,1,11:00:00,22:30:00
+El Rodeo,2,11:00:00,22:30:00
+El Rodeo,3,11:00:00,22:30:00
+El Rodeo,4,11:00:00,22:30:00
+El Rodeo,5,11:00:00,22:30:00
+El Rodeo,6,11:00:00,22:30:00
+Provence,0,11:30:00,21:00:00
+Provence,1,11:30:00,21:00:00
+Provence,2,11:30:00,21:00:00
+Provence,3,11:30:00,21:00:00
+Provence,6,11:30:00,21:00:00
+Provence,4,11:30:00,22:00:00
+Provence,5,11:30:00,22:00:00
+Bonchon,0,17:00:00,00:30:00
+Bonchon,1,17:00:00,00:30:00
+Bonchon,2,17:00:00,00:30:00
+Bonchon,3,17:00:00,01:30:00
+Bonchon,4,17:00:00,01:30:00
+Bonchon,5,15:00:00,01:30:00
+Bonchon,6,15:00:00,23:30:00
+Tazza Kitchen,0,11:00:00,22:00:00
+Tazza Kitchen,1,11:00:00,22:00:00
+Tazza Kitchen,2,11:00:00,22:00:00
+Tazza Kitchen,3,11:00:00,22:00:00
+Tazza Kitchen,4,11:00:00,22:00:00
+Tazza Kitchen,5,11:00:00,22:00:00
+Tazza Kitchen,6,11:00:00,22:00:00
+Mandolin,0,11:00:00,22:00:00
+Mandolin,1,11:00:00,22:00:00
+Mandolin,2,11:00:00,22:00:00
+Mandolin,3,11:00:00,22:00:00
+Mandolin,4,10:00:00,22:30:00
+Mandolin,5,10:00:00,22:30:00
+Mandolin,6,11:00:00,23:00:00
+Mami Nora's,0,11:00:00,22:00:00
+Mami Nora's,1,11:00:00,22:00:00
+Mami Nora's,2,11:00:00,22:00:00
+Mami Nora's,3,11:00:00,22:00:00
+Mami Nora's,4,11:00:00,22:00:00
+Mami Nora's,5,11:00:00,22:00:00
+Mami Nora's,6,12:00:00,22:00:00
+Gravy,0,11:00:00,22:00:00
+Gravy,1,11:00:00,22:00:00
+Gravy,2,11:00:00,22:00:00
+Gravy,3,11:00:00,22:00:00
+Gravy,4,11:00:00,22:00:00
+Gravy,5,11:00:00,22:00:00
+Gravy,6,11:00:00,22:00:00
+Taverna Agora,0,11:00:00,22:00:00
+Taverna Agora,1,11:00:00,22:00:00
+Taverna Agora,2,11:00:00,22:00:00
+Taverna Agora,3,11:00:00,22:00:00
+Taverna Agora,6,11:00:00,22:00:00
+Taverna Agora,4,11:00:00,00:00:00
+Taverna Agora,5,11:00:00,00:00:00
+Char Grill,0,11:30:00,22:00:00
+Char Grill,1,11:30:00,22:00:00
+Char Grill,2,11:30:00,22:00:00
+Char Grill,3,11:30:00,22:00:00
+Char Grill,4,11:30:00,22:00:00
+Char Grill,5,07:00:00,15:00:00
+Char Grill,6,07:00:00,15:00:00
+Seoul 116,0,11:00:00,04:00:00
+Seoul 116,1,11:00:00,04:00:00
+Seoul 116,2,11:00:00,04:00:00
+Seoul 116,3,11:00:00,04:00:00
+Seoul 116,4,11:00:00,04:00:00
+Seoul 116,5,11:00:00,04:00:00
+Seoul 116,6,11:00:00,04:00:00
+Whiskey Kitchen,0,11:30:00,22:00:00
+Whiskey Kitchen,1,11:30:00,22:00:00
+Whiskey Kitchen,2,11:30:00,22:00:00
+Whiskey Kitchen,3,11:30:00,22:00:00
+Whiskey Kitchen,6,11:30:00,22:00:00
+Whiskey Kitchen,4,11:30:00,23:00:00
+Whiskey Kitchen,5,11:30:00,23:00:00
+Sitti,0,11:30:00,21:30:00
+Sitti,1,11:30:00,21:30:00
+Sitti,2,11:30:00,21:30:00
+Sitti,3,11:30:00,21:30:00
+Sitti,4,11:30:00,21:30:00
+Sitti,5,11:30:00,21:30:00
+Sitti,6,11:30:00,21:30:00
+Stanbury,0,11:00:00,00:00:00
+Stanbury,1,11:00:00,00:00:00
+Stanbury,2,11:00:00,00:00:00
+Stanbury,3,11:00:00,00:00:00
+Stanbury,4,11:00:00,00:00:00
+Stanbury,5,11:00:00,00:00:00
+Stanbury,6,11:00:00,00:00:00
+Yard House,0,11:30:00,22:00:00
+Yard House,1,11:30:00,22:00:00
+Yard House,2,11:30:00,22:00:00
+Yard House,3,11:30:00,22:00:00
+Yard House,4,11:30:00,22:00:00
+Yard House,5,11:30:00,22:00:00
+Yard House,6,11:30:00,22:00:00
+David's Dumpling,0,11:30:00,22:00:00
+David's Dumpling,1,11:30:00,22:00:00
+David's Dumpling,2,11:30:00,22:00:00
+David's Dumpling,3,11:30:00,22:00:00
+David's Dumpling,4,11:30:00,22:00:00
+David's Dumpling,5,11:30:00,22:00:00
+David's Dumpling,6,17:30:00,22:00:00
+Gringo a Gogo,0,11:00:00,23:00:00
+Gringo a Gogo,1,11:00:00,23:00:00
+Gringo a Gogo,2,11:00:00,23:00:00
+Gringo a Gogo,3,11:00:00,23:00:00
+Gringo a Gogo,4,11:00:00,23:00:00
+Gringo a Gogo,5,11:00:00,23:00:00
+Gringo a Gogo,6,11:00:00,23:00:00
+Centro,0,11:00:00,22:00:00
+Centro,2,11:00:00,22:00:00
+Centro,3,11:00:00,22:00:00
+Centro,4,11:00:00,22:00:00
+Centro,5,11:00:00,22:00:00
+Centro,6,11:00:00,22:00:00
+Brewery Bhavana,0,11:00:00,22:30:00
+Brewery Bhavana,1,11:00:00,22:30:00
+Brewery Bhavana,2,11:00:00,22:30:00
+Brewery Bhavana,3,11:00:00,22:30:00
+Brewery Bhavana,4,11:00:00,22:30:00
+Brewery Bhavana,5,11:00:00,22:30:00
+Brewery Bhavana,6,11:00:00,22:30:00
+Dashi,0,10:00:00,21:30:00
+Dashi,1,10:00:00,21:30:00
+Dashi,2,10:00:00,21:30:00
+Dashi,3,10:00:00,21:30:00
+Dashi,4,10:00:00,21:30:00
+Dashi,5,09:30:00,21:30:00
+Dashi,6,09:30:00,21:30:00
+42nd Street Oyster Bar,0,11:00:00,00:00:00
+42nd Street Oyster Bar,1,11:00:00,00:00:00
+42nd Street Oyster Bar,2,11:00:00,00:00:00
+42nd Street Oyster Bar,3,11:00:00,00:00:00
+42nd Street Oyster Bar,4,11:00:00,00:00:00
+42nd Street Oyster Bar,5,11:00:00,00:00:00
+42nd Street Oyster Bar,6,12:00:00,02:00:00
+Top of the Hill,0,11:00:00,21:00:00
+Top of the Hill,1,11:00:00,21:00:00
+Top of the Hill,2,11:00:00,21:00:00
+Top of the Hill,3,11:00:00,21:00:00
+Top of the Hill,4,11:00:00,21:00:00
+Top of the Hill,5,17:00:00,21:00:00
+Jose and Sons,0,11:30:00,22:00:00
+Jose and Sons,1,11:30:00,22:00:00
+Jose and Sons,2,11:30:00,22:00:00
+Jose and Sons,3,11:30:00,22:00:00
+Jose and Sons,4,11:30:00,22:00:00
+Jose and Sons,5,17:30:00,22:00:00
+Oakleaf,0,11:00:00,22:00:00
+Oakleaf,1,11:00:00,22:00:00
+Oakleaf,2,11:00:00,22:00:00
+Oakleaf,3,11:00:00,22:00:00
+Oakleaf,6,11:00:00,22:00:00
+Oakleaf,4,11:00:00,23:00:00
+Oakleaf,5,11:00:00,23:00:00
+Second Empire,0,11:00:00,22:00:00
+Second Empire,1,11:00:00,22:00:00
+Second Empire,2,11:00:00,22:00:00
+Second Empire,3,11:00:00,22:00:00
+Second Empire,4,11:00:00,22:00:00
+Second Empire,5,17:00:00,22:00:00
+Second Empire,6,17:00:00,22:00:00

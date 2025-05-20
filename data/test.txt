@@ -1,0 +1,50 @@
+"Beasley's Chicken + Honey"
+"Death and Taxes"
+"Bonchon"
+
+
+
+[
+  "The Cowfish Sushi Burger Bar",
+  "Morgan St Food Hall",
+  "Garland",
+  "Crawford and Son",
+  "Bida Manda",
+  "The Cheesecake Factory",
+  "Tupelo Honey",
+  "Player's Retreat",
+  "Glenwood Grill",
+  "Neomonde",
+  "Page Road Grill",
+  "Mez Mexican",
+  "Saltbox",
+  "El Rodeo",
+  "Provence",
+  "Tazza Kitchen",
+  "Mandolin",
+  "Mami Nora's",
+  "Gravy",
+  "Taverna Agora",
+  "Char Grill",
+  "Whiskey Kitchen",
+  "Sitti",
+  "Yard House",
+  "David's Dumpling",
+  "Gringo a Gogo",
+  "Centro",
+  "Brewery Bhavana",
+  "Dashi",
+  "Top of the Hill",
+  "Jose and Sons",
+  "Oakleaf",
+  "Second Empire"
+]
+
+# Yeah I might have forgot it was 2025 when I originally was testing.
+localhost:5555/restaurants?datetime_str=2024-03-20 14:30:00
+
+Original Errors:
+- "Caffe Luna","Mon-Sun 11 am - 12 am"
+- "Seoul 116","Mon-Sun 11 am - 4 am"
+- "Stanbury","Mon-Sun 11 am - 12 am"
+- "42nd Street Oyster Bar","Mon-Sat 11 am - 12 am  / Sun 12 pm - 2 am"
