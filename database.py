@@ -1,4 +1,4 @@
-from sqlalchemy import create_engine, Column, Integer, String, Time
+from sqlalchemy import create_engine, Column, Integer, String, Time, UniqueConstraint
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from typing import Generator
@@ -27,6 +27,17 @@ class RestaurantHours(Base):
     day_of_week = Column(Integer)  # 0 = Monday, 6 = Sunday
     open_time = Column(Time)
     close_time = Column(Time)
+
+    # Add unique constraint to prevent duplicates
+    __table_args__ = (
+        UniqueConstraint(
+            "restaurant_name",
+            "day_of_week",
+            "open_time",
+            "close_time",
+            name="unique_restaurant_hours",
+        ),
+    )
 
 
 # Create all tables

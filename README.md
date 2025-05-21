@@ -67,6 +67,14 @@ Example:
 curl "http://localhost:5555/restaurants?datetime_str=2024-03-20%2014:30:00"
 ```
 
+```
+# Load Data with Postman
+localhost:5555/load-data
+
+# Get Data with Postman
+localhost:5555/restaurants?datetime_str=2024-03-20 14:30:00
+```
+
 ### Decisions / Observations
 
 - Used FastAPI over Django because its better/faster to get these smaller projects rolling (Could rewrite in Django if you want me to)
@@ -80,13 +88,11 @@ curl "http://localhost:5555/restaurants?datetime_str=2024-03-20%2014:30:00"
 - Used pandas because I am a data person and grew up with it. There are other options.
 - Tried to add some logging for debug level because I hate print statements leftover.
 
-### TODO
+### TODO / Future expansion
 1. Add more error handling
 1. Add tests
-1. Add API documentation
 1. Add data validation
-1. Add database migrations
 1. Add health check endpoint
 1. Move code to relevant places.
-1. Add more error handling
-1. Add tests
+1. Receive more/different data sources
+1. Might want to check if having multiple rows with same info but different times breaks anything

@@ -7,7 +7,7 @@ The application is designed to be used as a RESTful API.
 
 """
 
-from fastapi import FastAPI, HTTPException, Depends
+from fastapi import FastAPI, HTTPException, Depends, BackgroundTasks
 from datetime import datetime, time
 from pydantic import BaseModel
 from typing import List
@@ -16,6 +16,7 @@ import logging
 import json
 from sqlalchemy.orm import Session
 from database import get_db, RestaurantHours
+from load_data import load_data_to_db
 
 # Configure logging
 logging.basicConfig(
@@ -30,6 +31,11 @@ app = FastAPI()
 # Did this with a pydantic model but have done something similar with a dataclass as well.
 class RestaurantResponse(BaseModel):
     restaurant_names: List[str]
+
+
+class DataLoadResponse(BaseModel):
+    message: str
+    status: str
 
 
 def is_time_between(current_time: time, start_time: time, end_time: time) -> bool:
@@ -50,6 +56,25 @@ def is_time_between(current_time: time, start_time: time, end_time: time) -> boo
     else:
         # Overnight case: start_time is after end_time (e.g., 23:00 to 01:00)
         return current_time >= start_time or current_time <= end_time
+
+
+@app.post("/load-data", response_model=DataLoadResponse)
+async def load_data(background_tasks: BackgroundTasks) -> DataLoadResponse:
+    """
+    Asynchronously load restaurant data into the database.
+    This endpoint triggers the data loading process in the background,
+    allowing the API to remain responsive while data is being loaded.
+
+    Args:
+        background_tasks (BackgroundTasks): Background tasks
+
+    Returns:
+        DataLoadResponse: A response containing a message and status
+    """
+    background_tasks.add_task(load_data_to_db)
+    return DataLoadResponse(
+        message="Data loading started in background", status="processing"
+    )
 
 
 @app.get("/restaurants", response_model=RestaurantResponse)

@@ -9,6 +9,7 @@ import logging
 import time
 from sqlalchemy.exc import OperationalError
 from sqlalchemy import text
+from sqlalchemy.dialects.postgresql import insert
 
 # Configure logging
 logging.basicConfig(
@@ -47,12 +48,15 @@ def wait_for_db(max_retries: int = 5, retry_interval: int = 5) -> None:
 def load_data_to_db():
     """
     Load restaurant data from CSV into PostgreSQL database.
+    Uses UPSERT to handle duplicate entries.
     """
     try:
         # Wait for database to be ready
         wait_for_db()
 
         # Read and transform the data
+        # In theory we would want to allow us to give this a path to the csv file but if
+        # I go down every expansion rabbit hole I will not finish in a timely manner.
         df = pd.read_csv("data/restaurants.csv")
         transformed_df = transform_hours_data(df)
 
@@ -60,18 +64,22 @@ def load_data_to_db():
         db = SessionLocal()
 
         try:
-            # Clear existing data
-            db.query(RestaurantHours).delete()
+            # Convert DataFrame to list of dictionaries
+            records = transformed_df.to_dict("records")
 
-            # Insert new data
-            for _, row in transformed_df.iterrows():
-                restaurant = RestaurantHours(
-                    restaurant_name=row["restaurant_name"],
-                    day_of_week=row["day_of_week"],
-                    open_time=row["open_time"],
-                    close_time=row["close_time"],
-                )
-                db.add(restaurant)
+            # Create insert statement with ON CONFLICT DO NOTHING
+            stmt = insert(RestaurantHours).values(records)
+            stmt = stmt.on_conflict_do_nothing(
+                index_elements=[
+                    "restaurant_name",
+                    "day_of_week",
+                    "open_time",
+                    "close_time",
+                ]
+            )
+
+            # Execute the statement
+            db.execute(stmt)
 
             # Commit the changes
             db.commit()
