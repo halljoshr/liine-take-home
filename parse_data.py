@@ -53,6 +53,7 @@ def expand_day_range(day_range: str) -> list:
         list: A list of days
     """
 
+    # Probably could make this a dataclass or enum and use it multiple places if needed.
     day_map = {
         "mon": 0,
         "monday": 0,

@@ -31,6 +31,12 @@ docker-compose up --build
 # The API will be available at http://localhost:5555
 ```
 
+If creating a new instance make sure to run the load data request or it will show no rows.
+```
+# Load Data with Postman
+localhost:5555/load-data
+```
+
 #### Manual Setup
 1. Install dependencies:
 ```bash
@@ -67,12 +73,16 @@ Example:
 curl "http://localhost:5555/restaurants?datetime_str=2024-03-20%2014:30:00"
 ```
 
-```
-# Load Data with Postman
-localhost:5555/load-data
 
+```
 # Get Data with Postman
 localhost:5555/restaurants?datetime_str=2024-03-20 14:30:00
+```
+
+### Postgres Testing Access
+```
+psql -h localhost -U postgres -d restaurants
+SELECT * FROM restaurant_hours;
 ```
 
 ### Decisions / Observations
@@ -96,3 +106,6 @@ localhost:5555/restaurants?datetime_str=2024-03-20 14:30:00
 1. Move code to relevant places.
 1. Receive more/different data sources
 1. Might want to check if having multiple rows with same info but different times breaks anything
+1. Currently tests rely on docker server being up. Could probably make that better and run locally.
+
+

@@ -1,7 +1,14 @@
 FROM python:3.12-slim-bookworm
 
 # The installer requires curl (and certificates) to download the release archive
-RUN apt-get update && apt-get install -y --no-install-recommends curl ca-certificates
+# most of this is for psycopg2
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    curl \
+    ca-certificates \
+    libpq-dev \
+    gcc \
+    python3-dev \
+    && rm -rf /var/lib/apt/lists/*
 
 # Download the latest installer
 ADD https://astral.sh/uv/install.sh /uv-installer.sh

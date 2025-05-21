@@ -10,6 +10,7 @@ import time
 from sqlalchemy.exc import OperationalError
 from sqlalchemy import text
 from sqlalchemy.dialects.postgresql import insert
+from sqlalchemy.orm import Session
 
 # Configure logging
 logging.basicConfig(
@@ -45,7 +46,9 @@ def wait_for_db(max_retries: int = 5, retry_interval: int = 5) -> None:
                 raise
 
 
-def load_data_to_db():
+def load_data_to_db(
+    df: pd.DataFrame = pd.read_csv("data/restaurants.csv"),
+):
     """
     Load restaurant data from CSV into PostgreSQL database.
     Uses UPSERT to handle duplicate entries.
@@ -57,11 +60,9 @@ def load_data_to_db():
         # Read and transform the data
         # In theory we would want to allow us to give this a path to the csv file but if
         # I go down every expansion rabbit hole I will not finish in a timely manner.
-        df = pd.read_csv("data/restaurants.csv")
         transformed_df = transform_hours_data(df)
 
-        # Create database session
-        db = SessionLocal()
+        db: Session = SessionLocal()
 
         try:
             # Convert DataFrame to list of dictionaries
