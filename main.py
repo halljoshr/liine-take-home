@@ -7,14 +7,15 @@ The application is designed to be used as a RESTful API.
 
 """
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Depends
 from datetime import datetime, time
-import pandas as pd
 from pydantic import BaseModel
 from typing import List
 import uvicorn
 import logging
 import json
+from sqlalchemy.orm import Session
+from database import get_db, RestaurantHours
 
 # Configure logging
 logging.basicConfig(
@@ -52,15 +53,18 @@ def is_time_between(current_time: time, start_time: time, end_time: time) -> boo
 
 
 @app.get("/restaurants", response_model=RestaurantResponse)
-def get_restaurants(datetime_str: str) -> RestaurantResponse:
+def get_restaurants(
+    datetime_str: str, db: Session = Depends(get_db)
+) -> RestaurantResponse:
     """
     Get the list of restaurants that are open at a given time.
 
     Args:
         datetime_str (str): The datetime string in the format YYYY-MM-DD HH:MM:SS
+        db (Session): Database session
 
     Returns:
-        list: A list of restaurant names that are open at the given time.
+        RestaurantResponse: A response containing a list of restaurant names that are open at the given time.
 
     Todo:
         - Handle restaurant not found
@@ -77,30 +81,24 @@ def get_restaurants(datetime_str: str) -> RestaurantResponse:
         logger.debug(f"Day of week (0=Monday): {day_of_week}")
         logger.debug(f"Current time: {current_time}")
 
-        # Read the CSV file (I would not do this in a real application)
-        df = pd.read_csv("data/restaurants_transformed.csv")
+        # Query restaurants from database
+        restaurants = (
+            db.query(RestaurantHours)
+            .filter(RestaurantHours.day_of_week == day_of_week)
+            .all()
+        )
 
-        # Convert string times to time objects with explicit format
-        df["open_time"] = pd.to_datetime(df["open_time"], format="%H:%M:%S").dt.time
-        df["close_time"] = pd.to_datetime(df["close_time"], format="%H:%M:%S").dt.time
-
-        # Filter restaurants that are open on the given day and time
-        open_restaurants = df[
-            (df["day_of_week"] == day_of_week)
-            & df.apply(
-                lambda row: is_time_between(
-                    current_time, row["open_time"], row["close_time"]
-                ),
-                axis=1,
-            )
+        # Filter restaurants that are open at the current time
+        open_restaurants = [
+            r.restaurant_name
+            for r in restaurants
+            if is_time_between(current_time, r.open_time, r.close_time)
         ]
 
-        logger.debug(f"Found {len(open_restaurants)} restaurants open at this time")
+        # Remove duplicates while preserving order
+        restaurant_names = list(dict.fromkeys(open_restaurants))
 
-        # Get unique restaurant names
-        restaurant_names = open_restaurants["restaurant_name"].unique().tolist()
-
-        # Pretty print the restaurant list using JSON formatting
+        logger.debug(f"Found {len(restaurant_names)} restaurants open at this time")
         logger.debug("Open restaurants:\n" + json.dumps(restaurant_names, indent=2))
 
         return RestaurantResponse(restaurant_names=restaurant_names)

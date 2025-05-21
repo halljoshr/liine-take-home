@@ -6,7 +6,7 @@ Build an API with an endpoint which takes a single parameter, a datetime string,
 
 ### Assumptions:
 * If a day of the week is not listed, the restaurant is closed on that day
-* All times are local — don’t worry about timezone-awareness
+* All times are local — don't worry about timezone-awareness
 * The CSV file will be well-formed, assume all names and hours are correct
 
 ### Want bonus points? Here are a few things we would really like to see:
@@ -14,33 +14,79 @@ Build an API with an endpoint which takes a single parameter, a datetime string,
 
 If you have any questions, let me know. Use git to track your progress, and push your solution to a github repository (public or if private just give me access @sharpmoose)
 
+### Project Structure
+- `main.py`: FastAPI application with the main endpoint
+- `database.py`: SQLAlchemy models and database configuration
+- `parse_data.py`: Script to parse and transform the restaurant hours data
+- `load_data.py`: Script to load data from CSV into PostgreSQL
+- `docker-compose.yml`: Docker Compose configuration for the application and database
 
+### Running the Application
 
-# TODO
+#### Using Docker Compose (Recommended)
+```bash
+# Build and start the containers
+docker-compose up --build
 
-1. Finish Readme
+# The API will be available at http://localhost:5555
+```
+
+#### Manual Setup
+1. Install dependencies:
+```bash
+uv sync
+```
+
+2. Set up PostgreSQL database:
+```bash
+# Create database
+createdb restaurants
+
+# Set environment variable
+export DATABASE_URL="postgresql://postgres:postgres@localhost:5432/restaurants"
+```
+
+3. Load data and run the application:
+```bash
+# Load data into database
+uv run load_data.py
+
+# Run the application
+uv run main.py
+```
+
+### API Usage
+The API provides a single endpoint:
+
+```
+GET /restaurants?datetime_str=YYYY-MM-DD HH:MM:SS
+```
+
+Example:
+```bash
+curl "http://localhost:5555/restaurants?datetime_str=2024-03-20%2014:30:00"
+```
+
+### Decisions / Observations
+
+- Used FastAPI over Django because its better/faster to get these smaller projects rolling (Could rewrite in Django if you want me to)
+- Implemented PostgreSQL for robust data storage and querying capabilities
+- Used SQLAlchemy as the ORM for type-safe database operations
+- Used uv as my package manager. Been exploring it lately.
+- Added Docker Compose for easy deployment and development (docker with uv was a choice though, first time with that)
+- Implemented proper error handling and logging
+- Added data loading script to handle initial data population
+- I used Postman to test the API endpoints
+- Used pandas because I am a data person and grew up with it. There are other options.
+- Tried to add some logging for debug level because I hate print statements leftover.
+
+### TODO
 1. Add more error handling
 1. Add tests
-1. Maybe ask more about what they mean about the handling all the hours.
-    1. But I think my logic should hold up either way.
-
-
-# Decisions / Observations
-
-* I went with a separate parse data setup and saved to csv (might change to postgres for docker version)
-* Used pandas because I am a data person and grew up with it. There are other options.
-* Used uv as my package manager. Been exploring it a bunch lately.
-* Went with FastAPI because for this style of project it is just faster to get running.
-* Tried to add some logging for debug level because I hate print statements leftover.
-* I used Postman to test the API endpoint
-* Docker with uv was a "choice" but used their docs to figure it out.
-
-
-
-## Run with Docker
-```
-docker build -t liine-restaurant-api .
-
-# Although I ran in docker desktop application setting the port there.
-docker run -d -p 5555:5555 liine-restaurant-api
-```
+1. Add API documentation
+1. Add data validation
+1. Add database migrations
+1. Add health check endpoint
+1. Move code to relevant places.
+1. Add more error handling
+1. Add tests

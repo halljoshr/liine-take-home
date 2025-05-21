@@ -24,6 +24,3 @@ RUN uv sync --locked
 
 # Expose the port the app runs on
 EXPOSE 5555
-
-# Command to run the application
-CMD ["uv", "run", "main.py"] 

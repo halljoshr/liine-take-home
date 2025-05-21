@@ -10,7 +10,7 @@ from datetime import datetime
 
 
 # Function to parse time string to standardized format
-def parse_time(time_str: str) -> str:
+def parse_time(time_str: str) -> str | None:
     """
     This function parses a time string to a standardized format.
 
